@@ -28,7 +28,7 @@ This app needs docker to be built and runned, so each time you want to use it ma
 Of course, you need to have docker installed :) 
 
 1) clone this repository
-```bash git clone https://github.com/PorKaTe/PorKaTe.git
+``` git clone git@github.com:LudwingKun/PorKaTe.git
 ```
 
 2) change directory 
