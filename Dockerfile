@@ -1,15 +1,11 @@
 FROM kalilinux/kali-rolling:latest
 
-# Update and install base Kali metapackage
+# Combine all updates and installations in single layers to reduce size
 RUN apt-get update && \
-    DEBIAN_FRONTEND=noninteractive apt-get install -y \
-    kali-linux-default \
-    && apt-get clean \
-    && rm -rf /var/lib/apt/lists/*
-
-# Install additional required packages
-RUN apt-get update && \
-    DEBIAN_FRONTEND=noninteractive apt-get install -y \
+    DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends \
+    # Core Kali tools (lightweight selection instead of full kali-linux-default)
+    kali-tools-top10 \
+    # Required packages
     vsftpd \
     hexedit \
     strongswan \
@@ -22,18 +18,22 @@ RUN apt-get update && \
     httptunnel \
     net-tools \
     ettercap-common \
-    ettercap-graphical \
+    ettercap-text-only \
     ptunnel \
     nmap \
     openssl \
     hashdeep \
     p7zip-full \
     apache2 \
+    && apt-get autoremove -y \
     && apt-get clean \
-    && rm -rf /var/lib/apt/lists/*
+    && rm -rf /var/lib/apt/lists/* \
+    && rm -rf /tmp/* \
+    && rm -rf /var/tmp/* \
+    && find /var/log -type f -exec truncate -s 0 {} \;
 
 # Set working directory
 WORKDIR /root
 
 # Keep container running
-CMD ["/bin/bash"]\
+CMD ["/bin/bash"]
