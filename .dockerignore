@@ -1,0 +1,44 @@
+# Git files
+.git
+.gitignore
+.gitattributes
+
+# Documentation
+README.md
+LICENSE
+*.md
+
+# Workspace (shared volume, non serve nell'immagine)
+workspace/
+
+# Scripts (non servono dentro l'immagine)
+start_kali.sh
+*.sh
+
+# IDE and editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# OS files
+Thumbs.db
+desktop.ini
+
+# Logs
+*.log
+
+# Temporary files
+*.tmp
+*.temp
+.cache/
+
+# Docker files (non servono nel context)
+docker-compose.yml
+.dockerignore
+
+# Backup files
+*.bak
+*.backup
