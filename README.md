@@ -1,7 +1,7 @@
 # README
 ---
 ## Why you need PorKaTe (Portable Kali Terminal)?
-Are you tired,of using slow virtual machines to use Kali Linux? 
+Are you tired of using slow virtual machines to use Kali Linux? 
 Most of the time you only need the terminal and all his tools.
 Well I'm tired, so I built this simple docker image containing the latest version of kali and adding all the following packages
 - hexedit
@@ -27,9 +27,9 @@ Well I'm tired, so I built this simple docker image containing the latest versio
 This app needs docker to be built and runned, so each time you want to use it make sure to have docker started.
 Of course, you need to have docker installed :) 
 
-1) clone this repository
-```bash git clone https://github.com/PorKaTe/PorKaTe.git
-```
+1) clone this repository    
+` git clone git@github.com:LudwingKun/PorKaTe.git
+`
 
 2) change directory 
 ```bash
